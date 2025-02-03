@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form @submit.prevent="login(user)" action="submit">
+    <form @submit.prevent="" action="submit">
       <label for="username">Username</label>
       <input type="text" v-model="user.username" />
       <label for="password"></label>
@@ -14,12 +14,8 @@
 
 <script setup>
 import { ref, reactive } from 'vue'
-const user = reactive({ username: '', password: '' })
-function login(user) {
-  console.log(user)
-}
+const 
 
-const loggedIn = false
 </script>
 
 <style scoped></style>
