@@ -7,6 +7,7 @@
       <button @click="filterByManufacturer('HMX')">Filter by HMX</button>
       <button @click="clearFilter">Clear Filter</button>
     </div>
+    <div></div>
   </div>
 </template>
 
@@ -15,37 +16,25 @@ import { ref, reactive } from 'vue'
 const switches = [
   {
     manufacturer: 'Gateron',
-    name: 'Red',
+    name: 'Gateron Red',
     type: 'linear',
     sound: 'creamy',
   },
   {
     manufacturer: 'Gateron',
-    name: 'Milky Yellow Pro (KS-3)',
+    name: 'Gateron Milky Yellow Pro (KS-3)',
     type: 'linear',
     sound: 'creamy',
   },
   {
     manufacturer: 'HMX',
-    name: 'Xinhai',
-    type: 'linear',
-    sound: 'thocky',
-  },
-  {
-    manufacturer: 'HMX',
-    name: 'Poro',
+    name: 'HMX Poro',
     type: 'linear',
     sound: 'thocky',
   },
   {
     manufacturer: 'KTT',
-    name: 'Strawberry',
-    type: 'linear',
-    sound: 'creamy',
-  },
-  {
-    manufacturer: 'Akko',
-    name: 'Linear 3051',
+    name: ' KTT Strawberry',
     type: 'linear',
     sound: 'creamy',
   },
@@ -61,16 +50,9 @@ const switches = [
     type: 'linear',
     sound: 'creamy',
   },
-
   {
     manufacturer: 'Gateron',
     name: 'Brown',
-    type: 'tactile',
-    sound: 'thocky',
-  },
-  {
-    manufacturer: 'Gateron',
-    name: 'Tactile',
     type: 'tactile',
     sound: 'thocky',
   },
@@ -123,30 +105,77 @@ const switches = [
     type: 'clicky',
     sound: 'clicky',
   },
-
   {
     manufacturer: 'Gateron',
     name: 'Silent Red',
-    type: 'silent',
+    type: 'linear',
     sound: 'silent',
   },
   {
     manufacturer: 'Gateron',
     name: 'Silent Brown',
-    type: 'silent',
+    type: 'tactile',
     sound: 'silent',
   },
   {
     manufacturer: 'Akko',
     name: 'Silent Red',
-    type: 'silent',
+    type: 'linear',
     sound: 'silent',
   },
   {
     manufacturer: 'Akko',
     name: 'Silent Brown',
-    type: 'silent',
+    type: 'tactile',
     sound: 'silent',
+  },
+  {
+    manufacturer: 'HMX',
+    name: 'HMX Cheese',
+    type: 'linear',
+    sound: 'clacky',
+  },
+  {
+    manufacturer: 'HMX',
+    name: 'HMX Xinhai',
+    type: 'linear',
+    sound: 'clacky',
+  },
+  {
+    manufacturer: 'Gateron',
+    name: 'Gateron Quinn',
+    type: 'tactile',
+    sound: 'clacky',
+  },
+  {
+    manufacturer: 'Gateron',
+    name: 'Gateron Baby Kangaroo (V2)',
+    type: 'tactile',
+    sound: 'clacky',
+  },
+  {
+    manufacturer: 'HMX',
+    name: 'HMX Swift',
+    type: 'linear',
+    sound: 'clacky',
+  },
+  {
+    manufacturer: 'HMX',
+    name: 'HMX Deep Navy',
+    type: 'linear',
+    sound: 'clacky',
+  },
+  {
+    manufacturer: 'HMX',
+    name: 'HMX Macchiato',
+    type: 'linear',
+    sound: 'clacky',
+  },
+  {
+    manufacturer: 'HMX',
+    name: 'HMX Sunset Gleam',
+    type: 'linear',
+    sound: 'clacky',
   },
 ]
 
