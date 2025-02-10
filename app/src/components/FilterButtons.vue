@@ -1,19 +1,26 @@
 <template>
   <div>
     <h2 class="mx-auto justify-self-center">Genshin Popup Event</h2>
-    <div>
-      <button @click="filterByManufacturer('Gateron')">Filter by Gateron</button>
-      <button @click="filterByManufacturer('Akko')">Filter by Akko</button>
-      <button @click="filterByManufacturer('HMX')">Filter by HMX</button>
-      <button @click="clearFilter">Clear Filter</button>
-    </div>
-    <div></div>
+    <button @click="filterSwitches('Gateron')">Gateron</button>
+    <button @click="filterSwitches('Akko')">Akko</button>
+    <button @click="filterSwitches('Wuque Studios')">Wuque Studios</button>
+    <button @click="filterSwitches('HMX')">HMX</button>
+    <button @click="filterSwitches('KTT')">KTT</button>
+    <button @click="filterByType('linear')">Linear</button>
+    <button @click="filterByType('tactile')">Tactile</button>
+    <button @click="filterByType('clicky')">Clicky</button>
+    <button @click="filterByType('silent')">Silent</button>
+    <ul>
+      <li v-for="switche in filteredSwitches" :key="switche.name">
+        {{ switche.name }} - {{ switche.manufacturer }} - {{ switche.type }} - {{ switche.sound }}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script setup>
 import { ref, reactive } from 'vue'
-const switches = [
+const switches = reactive([
   {
     manufacturer: 'Gateron',
     name: 'Gateron Red',
@@ -177,22 +184,17 @@ const switches = [
     type: 'linear',
     sound: 'clacky',
   },
-]
+])
+const filteredSwitches = ref(switches)
 
-const switchesList = document.getElementById('switches-list')
+function filterSwitches(manufacturer) {
+  filteredSwitches.value = switches.filter((switche) => switche.manufacturer === manufacturer)
+}
 
-const gateronSwitches = switches.filter((switche) => switche.manufacturer = 'Gateron')
-const akkoSwitches = switches.filter((switche) => switche.manufacturer = 'Akko')
-const wuqueSwitches = switches.filter((switche) => switche.manufacturer = 'Wuque Studios')
-const invyrSwitches = switches.filter((switche) => switche.manufacturer = 'Invyr')
-const kttSwitches = switches.filter((switche) => switche.manufacturer = 'KTT')
-const hmxSwitches = switches.filter((switche) => switche.manufacturer = 'HMX')
-const silentSwitches = switches.filter((switche) => switche.type = 'silent')
-const linearSwitches = switches.filter((switche) => switche.type = 'linear')
-const tactileSwitches = switches.filter((switche) => switche.type = 'tactile')
-const clickySwitches = switches.filter((switche) => switche.type = 'clicky')
-const creamySwitches = switches.filter((switche) => switche.sound = 'creamy')
-const thockySwitches = switches.filter((switche) => switche.sound = 'thocky')
+function filterByType(type) {
+  filteredSwitches.value = switches.filter((switche) => switche.type === type)
+}
+
 
 </script>
 
