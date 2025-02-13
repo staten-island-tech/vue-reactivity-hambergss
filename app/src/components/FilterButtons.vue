@@ -24,6 +24,7 @@
 
 <script setup>
 import { ref, reactive } from 'vue'
+import { defineProps } from 'vue'
 
 const filteredSwitches = ref(switches)
 

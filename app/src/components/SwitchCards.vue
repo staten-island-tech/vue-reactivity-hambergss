@@ -10,7 +10,8 @@
 </template>
 
 <script setup>
-// This component receives a "switche" prop containing the switch data
+import { defineProps } from 'vue'
+
 defineProps({
   switche: {
     type: Object,
