@@ -1,11 +1,12 @@
 <template>
   <div id="app">
-    <HomePage />
+    <h1>Switch Store</h1>
+    
   </div>
 </template>
 
 <script setup>
-import HomePage from './views/HomePage.vue';
+import { ref } from 'vue';
 </script>
 
 <style scoped>
