@@ -6,18 +6,15 @@
     </p>
     <p class="text-sm text-gray-600 mb-1"><strong>Type:</strong> {{ switche.type }}</p>
     <p class="text-sm text-gray-600 mb-1"><strong>Sound:</strong> {{ switche.sound }}</p>
+    <p>Price: ${{ switche.price }}</p>
+    <button @click="props.addtoCart(switche)">Add to Cart</button>
   </div>
 </template>
 
 <script setup>
 import { defineProps } from 'vue'
 
-defineProps({
-  switche: {
-    type: Object,
-    required: true,
-  },
-})
+const props = defineProps(['switche', 'addtoCart'])
 </script>
 
 <style scoped></style>
