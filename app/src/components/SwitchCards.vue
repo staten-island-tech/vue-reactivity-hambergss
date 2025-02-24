@@ -1,20 +1,26 @@
 <template>
-  <div class="bg-white p-6 rounded-lg shadow-lg w-72 hover:shadow-xl transition-all">
-    <h2 class="text-2xl font-bold text-gray-800 mb-2">{{ switche.name }}</h2>
-    <p class="text-sm text-gray-600 mb-1">
-      <strong>Manufacturer:</strong> {{ switche.manufacturer }}
-    </p>
-    <p class="text-sm text-gray-600 mb-1"><strong>Type:</strong> {{ switche.type }}</p>
-    <p class="text-sm text-gray-600 mb-1"><strong>Sound:</strong> {{ switche.sound }}</p>
-    <p>Price: ${{ switche.price }}</p>
-    <button @click="props.addtoCart(switche)">Add to Cart</button>
+  <div class="bg-white p-4 rounded-xl shadow-md hover:shadow-lg transition-all">
+    <img
+      :src="switchItem.imageUrl"
+      :alt="switchItem.alt"
+      class="w-full h-48 object-cover rounded-lg"
+    />
+    <h3 class="card-title text-lg font-bold text-dark-navy">{{ switchItem.name }}</h3>
+    <p class="text-dark-navy mt-1">{{ switchItem.description }}</p>
+    <p class="text-lg font-semibold text-dark-navy mt-2">${{ switchItem.price }}</p>
+    <slot></slot>
   </div>
 </template>
 
 <script setup>
-import { defineProps } from 'vue'
-
-const props = defineProps(['switche', 'addtoCart'])
+defineProps({
+  switchItem: Object,
+  addToCart: Function,
+})
 </script>
 
-<style scoped></style>
+<style scoped>
+.text-dark-navy {
+  color: #1e3a8a;
+}
+</style>
