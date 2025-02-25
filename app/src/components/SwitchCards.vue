@@ -21,7 +21,4 @@ defineProps({
 </script>
 
 <style scoped>
-.text-dark-navy {
-  color: #1e3a8a;
-}
 </style>
