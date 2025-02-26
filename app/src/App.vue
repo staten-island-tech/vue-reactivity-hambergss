@@ -10,7 +10,7 @@
       <div class="bg-[#fba5a0] w-3/4 p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <SwitchCards v-for="item in switches" :key="item.name" :switchItem="item">
           <button
-            class="btn btn-primary bg-[#28d6b0] hover:bg-[#2bb698] mt-4 rounded-lg shadow-sm outline outline-2 outline-[#15162d] text-[#15162d]"
+            class="btn btn-primary bg-[#28d6b0] hover:bg-[#2bb698] mt-4 rounded-lg shadow-sm outline-[#15162d] text-[#15162d]"
             @click="addToCart(item)"
           >
             Add to Cart
